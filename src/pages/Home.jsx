@@ -11,8 +11,8 @@ function Home() {
     <Fragment>
       <NavBar />
 
-      <div className="container home mx-center">
-        <h1 className="text-center">A package host for deno</h1>
+      <div className="home-container mx-center">
+        <h1 className="text-center mb-5">A package host for deno</h1>
         <SearchPackages />
       </div>
 

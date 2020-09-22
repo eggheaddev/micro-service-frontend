@@ -3,8 +3,7 @@ import React from "react";
 function SearchPackages() {
   return (
     <div className="input-group flex-nowrap">
-      <div className="input-group-prepend">
-        <span className="input-group-text">
+      <div className="search-icon">
           <svg
             width="1em"
             height="1em"
@@ -22,22 +21,20 @@ function SearchPackages() {
               d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"
             />
           </svg>
-        </span>
       </div>
       <input
         type="text"
-        className="form-control"
-        placeholder="Recipient's username"
-        aria-label="Recipient's username"
+        className="form-control form-search"
+        placeholder="Package name"
         aria-describedby="addon-wrappring"
       />
       <div className="input-group-append">
         <button
-          className="btn btn-outline-secondary"
+          className="btn btn-search"
           type="button"
           id="button-addon2"
         >
-          Button
+          Search
         </button>
       </div>
     </div>

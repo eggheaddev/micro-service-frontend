@@ -1,29 +1,128 @@
 /* Global */
 body {
+  background: linear-gradient(90deg, #f3f3f3 0%, #e3e1e1 100%);
   margin: 0;
   padding: 0;
-  color: grey;
+  color: #303030;
 }
 
 h1 {
-  color: grey;
+  color: #303030;
+}
+
+:placeholder {
+  color: #dbdbdb;
 }
 
 /* NavBar */
 .nav-container {
-  width: 90vw;
-  margin: 0 5vw;
+  width: 95vw;
+  margin: 0 2.5vw;
   display: flex;
 }
 
-.sing-up-btn {
-  border-radius: 0;
-  background-color: green;
+.logo {
+  font-size: 2.25rem;
 }
-.sing-up-btn:focus {
+
+.nav-item {
+  font-size: 1.125rem;
+  color: #303030;
+}
+
+.sign-up-btn {
+  font-size: 1.125rem;
+  color: #303030;
+  border-radius: 0;
+  background-color: #5bbd6b;
+}
+.sign-up-btn:focus {
   box-shadow: none;
 }
 
-.sing-up-btn:hover {
-  background-color: red;
+.sign-up-btn:hover {
+  background-color: green;
+}
+
+/* Home */
+.home-container {
+  margin: 10vh 25vw;
+}
+
+.home-container > h1 {
+  font-size: 2.25rem;
+}
+
+.btn-search {
+  background-color: #f4e772;
+  border-radius: 0;
+  font-size: 1.125rem;
+}
+
+.form-search {
+  border-left: none;
+  border-color: #dbdbdb;
+  padding: 20px;
+  font-size: 1.125rem;
+}
+
+.form-search::placeholder,
+.search-icon {
+  color: #dbdbdb;
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.btn-search:focus,
+.form-search:focus {
+  box-shadow: none;
+  border-color: #dbdbdb;
+}
+
+.search-icon {
+  background-color: #ffffff;
+  border: solid 1px #dbdbdb;
+  border-right: none;
+  padding: 0 0 0 10px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Home Description */
+.home-description {
+  margin-bottom: 20vh;
+}
+.home-description h3 {
+  font-size: 3rem;
+}
+
+.home-description span {
+  font-size: 2.125rem;
+}
+
+/* Packages */
+
+/* Footer */
+.footer-container {
+  background-color: #303030;
+  color: #ffffff;
+  padding: 50px 0;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+}
+
+.footer-container ul {
+  font-size: 1.125rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }

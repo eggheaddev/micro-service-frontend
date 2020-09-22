@@ -29,8 +29,8 @@ function NavBar() {
               </li>
               <li className="nav-item">
                 <Link to="/login">
-                  <button type="button" className="btn sing-up-btn">
-                    Sing Up
+                  <button type="button" className="btn sign-up-btn ml-4">
+                    Sin Up
                   </button>
                 </Link>
               </li>
