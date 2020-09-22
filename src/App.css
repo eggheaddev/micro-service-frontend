@@ -1,0 +1,29 @@
+/* Global */
+body {
+  margin: 0;
+  padding: 0;
+  color: grey;
+}
+
+h1 {
+  color: grey;
+}
+
+/* NavBar */
+.nav-container {
+  width: 90vw;
+  margin: 0 5vw;
+  display: flex;
+}
+
+.sing-up-btn {
+  border-radius: 0;
+  background-color: green;
+}
+.sing-up-btn:focus {
+  box-shadow: none;
+}
+
+.sing-up-btn:hover {
+  background-color: red;
+}
