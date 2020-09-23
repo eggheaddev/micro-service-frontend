@@ -10,21 +10,22 @@ function Login() {
     <Fragment>
       <NavBar />
 
-      <div className="login container mx-center">
+      <div className="user-form form-container mx-center">
         <p className="text-center">Get a token</p>
+        <sub className="mb-5">Tokens are available for one hour.</sub>
         <form className="container mx-center">
           <div className="form-group">
             <label>Username or email</label>
-            <input type="username-email" className="form-control" />
+            <input name="username-email" type="username-email" className="form-control" autoFocus />
           </div>
           <div className="form-group">
             <label>Password</label>
-            <input type="password" className="form-control" />
+            <input name="password" type="password" className="form-control" />
           </div>
           <button type="submit" className="btn btn-block mb-1">
             Submit
           </button>
-          <Link to="/register">
+          <Link to="/register" className="switch-form">
             <button type="submit" className="btn btn-block">
               Create account
             </button>

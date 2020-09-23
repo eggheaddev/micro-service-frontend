@@ -6,12 +6,26 @@ body {
   color: #303030;
 }
 
-h1 {
+h1,
+h2,
+h3,
+span,
+p {
   color: #303030;
 }
 
 :placeholder {
   color: #dbdbdb;
+}
+
+.btn,
+.btn:hover,
+.btn:focus,
+input,
+input:focus,
+.form-control:focus {
+  border-radius: 0;
+  box-shadow: none;
 }
 
 /* NavBar */
@@ -33,15 +47,11 @@ h1 {
 .sign-up-btn {
   font-size: 1.125rem;
   color: #303030;
-  border-radius: 0;
   background-color: #5bbd6b;
-}
-.sign-up-btn:focus {
-  box-shadow: none;
 }
 
 .sign-up-btn:hover {
-  background-color: green;
+  background-color: #41ab4b;
 }
 
 /* Home */
@@ -55,8 +65,11 @@ h1 {
 
 .btn-search {
   background-color: #f4e772;
-  border-radius: 0;
   font-size: 1.125rem;
+}
+
+.btn-search:hover {
+  background-color: #d6ca5c;
 }
 
 .form-search {
@@ -75,7 +88,6 @@ h1 {
 
 .btn-search:focus,
 .form-search:focus {
-  box-shadow: none;
   border-color: #dbdbdb;
 }
 
@@ -125,4 +137,30 @@ footer {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+/* User Form */
+.form-container {
+  margin: 0 25vw;
+  padding: 10vh 2.5vw;
+}
+
+.user-form .text-center {
+  font-size: 2rem;
+}
+
+.user-form sub {
+  display: flex;
+  justify-content: center;
+}
+
+.user-form button {
+  background-color: #357be5;
+}
+
+.user-form button:hover,
+.user-form .switch-form:hover {
+  box-shadow: none;
+  text-decoration: none;
+  background-color: #276acf;
 }
