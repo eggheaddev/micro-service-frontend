@@ -7,25 +7,32 @@ body {
 }
 
 h1,
-h2,
-h3,
-span,
-p {
+a {
   color: #303030;
 }
 
-:placeholder {
-  color: #dbdbdb;
-}
-
+button,
+button:hover,
+button:focus,
 .btn,
 .btn:hover,
 .btn:focus,
 input,
 input:focus,
+.form-control,
 .form-control:focus {
   border-radius: 0;
   box-shadow: none;
+  font-size: 1.125rem;
+  color: #303030;
+}
+
+input::placeholder,
+.form-control::placeholder,
+.search-icon {
+  font-size: 1.125rem;
+  color: #dbdbdb;
+  font-weight: bold;
 }
 
 /* NavBar */
@@ -41,12 +48,9 @@ input:focus,
 
 .nav-item {
   font-size: 1.125rem;
-  color: #303030;
 }
 
 .sign-up-btn {
-  font-size: 1.125rem;
-  color: #303030;
   background-color: #5bbd6b;
 }
 
@@ -76,13 +80,6 @@ input:focus,
   border-left: none;
   border-color: #dbdbdb;
   padding: 20px;
-  font-size: 1.125rem;
-}
-
-.form-search::placeholder,
-.search-icon {
-  color: #dbdbdb;
-  font-weight: bold;
   font-size: 1.125rem;
 }
 
@@ -116,29 +113,6 @@ input:focus,
 
 /* Packages */
 
-/* Footer */
-.footer-container {
-  background-color: #303030;
-  color: #ffffff;
-  padding: 50px 0;
-}
-
-footer {
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer-title {
-  font-size: 1.5rem;
-}
-
-.footer-container ul {
-  font-size: 1.125rem;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
 /* User Form */
 .form-container {
   margin: 0 25vw;
@@ -163,4 +137,49 @@ footer {
   box-shadow: none;
   text-decoration: none;
   background-color: #276acf;
+}
+
+.user-form .form-info {
+  display: flex;
+  align-items: center;
+}
+
+/* Token */
+.token-container {
+  margin: 20vh 20vw;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.token-container span {
+  background-color: #f3f3f3;
+  border: solid 1px #303030;
+  padding: 10px 20px;
+  word-break: break-all;
+}
+
+/* Footer */
+.footer-container {
+  background-color: #303030;
+  color: #ffffff;
+  padding: 50px 0;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+}
+
+.footer-container ul {
+  font-size: 1.125rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }

@@ -30,7 +30,7 @@ function NavBar() {
               <li className="nav-item">
                 <Link to="/login">
                   <button type="button" className="btn sign-up-btn ml-4">
-                    Sign Up
+                    Get a token
                   </button>
                 </Link>
               </li>
