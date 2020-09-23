@@ -3,6 +3,7 @@ import React, { Fragment, useState } from "react";
 // Components
 import NavBar from "../components/NavBar";
 import LoginForm from "../components/LoginForm";
+import Token from "../components/Token"
 import Footer from "../components/Footer";
 
 function Login() {
@@ -19,15 +20,6 @@ function Login() {
   );
 }
 
-function Token(props) {
-  return (
-    <Fragment>
-      <div className="token-container">
-        <p>Copy your token below, paste it to our cli app and upload a module</p>
-        <span className="show-token mt-4 mb-5">{props.token}</span>
-      </div>
-    </Fragment>
-  );
-}
+
 
 export default Login;

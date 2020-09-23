@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 function RegisterForm() {
   const [userInfo, setUserInfo] = useState({
@@ -8,7 +8,8 @@ function RegisterForm() {
     password: "",
   });
 
-  const [error, setError] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [success, setSuccess] = useState(false);
 
   function handleInfo(event) {
     setUserInfo({
@@ -19,8 +20,8 @@ function RegisterForm() {
 
   function submitInfo(event) {
     event.preventDefault();
-    setError("Error message");
-    console.log(userInfo);
+    setErrorMessage("Error message");
+    if (userInfo.username === "elpepe") setSuccess(true)
   }
 
   return (
@@ -30,7 +31,7 @@ function RegisterForm() {
         <div className="form-group">
           <div className="form-info">
             <span>Username</span>
-            {error && <sub className="ml-3">{error}</sub>}
+            {errorMessage && <sub className="ml-3">{errorMessage}</sub>}
           </div>
           <input
             name="username"
@@ -44,7 +45,7 @@ function RegisterForm() {
         <div className="form-group">
           <div className="form-info">
             <span>Email address</span>
-            {error && <sub className="ml-3">{error}</sub>}
+            {errorMessage && <sub className="ml-3">{errorMessage}</sub>}
           </div>
           <input
             name="email"
@@ -57,7 +58,7 @@ function RegisterForm() {
         <div className="form-group">
           <div className="form-info">
             <span>Password</span>
-            {error && <sub className="ml-3">{error}</sub>}
+            {errorMessage && <sub className="ml-3">{errorMessage}</sub>}
           </div>
           <input
             name="password"
@@ -76,6 +77,7 @@ function RegisterForm() {
           </button>
         </Link>
       </form>
+      {success && <Redirect to="/login" />}
     </div>
   );
 }

@@ -1,6 +1,8 @@
 import React from "react";
 
-function SearchPackages() {
+function SearchPackages(props) {
+  const handleInput = event => props.onChange(event.target.value)
+
   return (
     <div className="input-group flex-nowrap">
       <div className="search-icon">
@@ -28,6 +30,7 @@ function SearchPackages() {
         placeholder="Package name"
         aria-describedby="addon-wrappring"
         autoFocus
+        onChange={handleInput}
       />
       <div className="input-group-append">
         <button className="btn btn-search" type="button" id="button-addon2">

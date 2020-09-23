@@ -23,13 +23,10 @@ function LoginForm(props) {
   function submitInfo(event) {
     event.preventDefault();
     let token = "";
-    let err = false
-    userInfo.usernameOrEmail === "elpepe" ? token = "skdjfjlks2342423dsf" : err = true
+    let err = false;
+    userInfo.usernameOrEmail === "elpepe" ? (token = "skdjfjlks2342423dsf") : (err = true);
     if (token) props.onChange(token);
-    if (err) {
-      setResult({ msg: "Error message", password: true, user: true });
-      setTimeout(_ => setResult({ msg: "", user: false }), 2500);
-    }
+    if (err) setResult({ msg: "Error message", password: true, user: true });
   }
 
   return (
