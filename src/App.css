@@ -112,6 +112,32 @@ input::placeholder,
 }
 
 /* Packages */
+.packages-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: auto auto auto;
+}
+
+/* Package Card */
+.package-card {
+  background-color: #92b6eb;
+  border-bottom: solid 10px #303030;
+  color: #303030;
+  padding: 5px 20px 40px;
+}
+
+.package-link:hover {
+  text-decoration: none;
+}
+
+.package-card .package-title {
+  display: flex;
+  align-items: center;
+}
+
+.package-card h1 {
+  font-size: 2rem;
+}
 
 /* User Form */
 .form-container {
@@ -129,14 +155,14 @@ input::placeholder,
 }
 
 .user-form button {
-  background-color: #3f87f2;
+  background-color: #92b6eb;
 }
 
 .user-form button:hover,
 .user-form .switch-form:hover {
   box-shadow: none;
   text-decoration: none;
-  background-color: #276acf;
+  background-color: #3f87f2;
 }
 
 .user-form .form-info {
