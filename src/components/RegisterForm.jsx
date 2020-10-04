@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 
+import { register } from "../services/users";
+
 function RegisterForm() {
   const [userInfo, setUserInfo] = useState({
     username: "",
@@ -20,8 +22,13 @@ function RegisterForm() {
 
   function submitInfo(event) {
     event.preventDefault();
-    setErrorMessage("Error message");
-    if (userInfo.username === "elpepe") setSuccess(true)
+    register(userInfo).then(res => {
+      if (!res.error) {
+        setSuccess(true);
+      } else {
+        setErrorMessage(res.message);
+      }
+    });
   }
 
   return (
@@ -31,7 +38,7 @@ function RegisterForm() {
         <div className="form-group">
           <div className="form-info">
             <span>Username</span>
-            {errorMessage && <sub className="ml-3">{errorMessage}</sub>}
+            {errorMessage.toLowerCase().match("username") && <sub className="ml-2">{errorMessage}</sub>}
           </div>
           <input
             name="username"
@@ -45,7 +52,7 @@ function RegisterForm() {
         <div className="form-group">
           <div className="form-info">
             <span>Email address</span>
-            {errorMessage && <sub className="ml-3">{errorMessage}</sub>}
+            {errorMessage.toLowerCase().match("email") && <sub className="ml-2">{errorMessage}</sub>}
           </div>
           <input
             name="email"
@@ -58,7 +65,7 @@ function RegisterForm() {
         <div className="form-group">
           <div className="form-info">
             <span>Password</span>
-            {errorMessage && <sub className="ml-3">{errorMessage}</sub>}
+            {errorMessage.toLowerCase().match("password") && <sub className="ml-2">{errorMessage}</sub>}
           </div>
           <input
             name="password"

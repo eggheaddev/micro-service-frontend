@@ -1,21 +1,25 @@
 function register(userInfo) {
-    return fetch("/api/", {
+    return fetch("/api/new_user", {
         method: "POST",
         body: JSON.stringify(userInfo),
         headers: {
             'Content-Type': 'application/json'
         }
-    }).then(data => console.log(data))
+    }).then(res => res.json())
+        .then(data => data)
 }
 
 function login(userInfo) {
-    return fetch("/api/", {
+    return fetch("/api/authorize", {
         method: "POST",
         body: JSON.stringify(userInfo),
+        credentials: "same-origin",
         headers: {
+            'Accept':  'application/json',
             'Content-Type': 'application/json'
         }
-    }).then(data => console.log(data))
+    }).then(res => res.json())
+        .then(data => data)
 }
 
-export default { register, login }
+export { register, login }

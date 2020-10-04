@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { login } from "../services/users";
+
 function LoginForm(props) {
   const [userInfo, setUserInfo] = useState({
-    usernameOrEmail: "",
+    username: "",
     password: "",
   });
 
-  const [result, setResult] = useState({
-    msg: "",
-    user: false,
-    password: false,
-  });
+  const [errorMsg, setErrorMsg] = useState("");
 
   function handleInfo(event) {
     setUserInfo({
@@ -22,11 +20,13 @@ function LoginForm(props) {
 
   function submitInfo(event) {
     event.preventDefault();
-    let token = "";
-    let err = false;
-    userInfo.usernameOrEmail === "elpepe" ? (token = "skdjfjlks2342423dsf") : (err = true);
-    if (token) props.onChange(token);
-    if (err) setResult({ msg: "Error message", password: true, user: true });
+    login(userInfo).then(res => {
+      if (!res.error) {
+        props.onChange(document.cookie.split(document.cookie.match("x-access-token="))[1])
+      } else {
+        setErrorMsg(res.message);
+      }
+    });
   }
 
   return (
@@ -37,10 +37,10 @@ function LoginForm(props) {
         <div className="form-group">
           <div className="form-info">
             <span>Username or email</span>
-            {result.user && <sub className="ml-3">{result.msg}</sub>}
+            {errorMsg && <sub className="ml-3">{errorMsg}</sub>}
           </div>
           <input
-            name="usernameOrEmail"
+            name="username"
             className="form-control"
             autoFocus
             onChange={handleInfo}
@@ -50,7 +50,6 @@ function LoginForm(props) {
         <div className="form-group">
           <div className="form-info">
             <span>Password</span>
-            {result.password && <sub className="ml-3">{result.msg}</sub>}
           </div>
           <input
             name="password"
