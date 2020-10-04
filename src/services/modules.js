@@ -1,13 +1,13 @@
-function getPackages() {
+function getModules() {
     return fetch("/api/storage/packages")
         .then(res => res.json())
         .then(data => data)
 }
 
-function getPackage(packageName) {
+function getModule(module) {
     return fetch("/api/storage/package", {
         method: "GET",
-        body: JSON.stringify(packageName),
+        body: JSON.stringify(module),
         headers: {
             'Content-Type': 'application/json'
         },
@@ -15,4 +15,4 @@ function getPackage(packageName) {
         .then(data => data.package)
 }
 
-export  { getPackages, getPackage }
+export  { getModules, getModule}

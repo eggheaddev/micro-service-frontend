@@ -1,6 +1,6 @@
 import React from "react";
 
-function SearchPackages(props) {
+function SearchModules(props) {
   const handleInput = event => props.onChange(event.target.value)
 
   return (
@@ -41,4 +41,4 @@ function SearchPackages(props) {
   );
 }
 
-export default SearchPackages;
+export default SearchModules;

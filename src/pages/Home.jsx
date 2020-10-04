@@ -3,21 +3,29 @@ import React, { Fragment, useState, useEffect } from "react";
 // Components
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import SearchPackages from "../components/SearchPackages";
+import SearchModules from "../components/SearchPackages";
 import AppDescription from "../components/AppDescription";
 import Modules from "../components/Modules";
 
-import { getPackages } from "../services/packages";
+import { getModules } from "../services/modules";
 
 function Home() {
-  const [packages, setPackages] = useState([]);
-  const [packageName, setPackageName] = useState("");
+  const [modules, setModules] = useState([]);
+  const [moduleName, setModuleName] = useState("");
 
   useEffect(_ => {
-    getPackages().then(data => setPackages(data.packages));
-  }, [])
+    getModules().then(data => setModules(data.packages));
+  }, []);
 
-  const handleInput = input => setPackageName(input);
+  const handleInput = input => setModuleName(input);
+
+  function togleInfo() {
+    if (!moduleName) {
+      return <AppDescription />;
+    } else {
+      return <Modules modules={modules} search={moduleName} />;
+    }
+  }
 
   return (
     <Fragment>
@@ -25,10 +33,10 @@ function Home() {
 
       <div className="home-container mx-center">
         <h1 className="text-center mb-5">A package host for deno</h1>
-        <SearchPackages onChange={handleInput} />
+        <SearchModules onChange={handleInput} />
       </div>
 
-      {!packageName ? <AppDescription /> : <Modules modules={packages} search={packageName} />}
+      <div className="description-packages-container">{togleInfo()}</div>
       <Footer />
     </Fragment>
   );

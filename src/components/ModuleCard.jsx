@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 function ModuleCard(props) {
-  const moduleLink = `/package/${props.title}@${props.version}v`
+const moduleLink = `/package/${props.title.replace(/\s/g, "-")}@${props.version}v`
 
   return (
     <Link

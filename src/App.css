@@ -234,6 +234,10 @@ input::placeholder,
 }
 
 /* Home Description */
+.description-packages-container {
+  min-height: 65vh;
+}
+
 .home-description {
   margin-bottom: 20vh;
 }
