@@ -1,15 +1,16 @@
-import React from "react"
-import {Link} from "react-router-dom"
+import React from "react";
+import { Link } from "react-router-dom";
 
 function NotFound() {
   return (
-    <div className="not-found container mx-center">
-    <p className="text-center 404">404</p>
-    <Link to="/">
-      <button className="btn">Go home</button>
-    </Link>
+    <div className="not-found-container">
+      <span>404</span>
+      <p>Ops! Looks like you are lost, let's go back home.</p>
+      <Link to="/">
+        <button className="btn">Go home</button>
+      </Link>
     </div>
-  )
+  );
 }
 
-export default NotFound
+export default NotFound;

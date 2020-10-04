@@ -35,7 +35,141 @@ input::placeholder,
   font-weight: bold;
 }
 
+/* Background */
+.square {
+  z-index: -1;
+  position: fixed;
+  clip-path: polygon(
+    50% 0,
+    0 50%,
+    5% 50%,
+    50% 5%,
+    95% 50%,
+    50% 95%,
+    5% 50%,
+    0 50%,
+    50% 100%,
+    100% 50%
+  );
+}
+
+.hexagon {
+  z-index: -1;
+  position: fixed;
+  clip-path: polygon(
+    50% 10%,
+    50% 0,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0 75%,
+    0 25%,
+    50% 0,
+    50% 10%,
+    10% 30%,
+    10% 70%,
+    50% 90%,
+    90% 70%,
+    90% 30%
+  );
+}
+
+.octagon {
+  z-index: -1;
+  position: fixed;
+  clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
+}
+
+#polygon1 {
+  background-color: #5bbd6b;
+  opacity: 0.5;
+  width: 20vw;
+  height: 20vw;
+  min-width: 150px;
+  min-height: 150px;
+  max-width: 300px;
+  max-height: 300px;
+  right: 100px;
+  bottom: -100px;
+}
+
+#polygon2 {
+  background-color: #f4e772;
+  opacity: 0.5;
+  width: 10vw;
+  height: 10vw;
+  min-width: 100px;
+  min-height: 100px;
+  top: 20px;
+  left: 200px;
+}
+
+#polygon5 {
+  transform: rotate(20deg);
+  background-color: #e49797;
+  opacity: 0.5;
+  width: 25vw;
+  height: 25vw;
+  min-width: 250px;
+  min-height: 250px;
+  max-width: 500px;
+  max-height: 500px;
+  top: 100px;
+  right: -100px;
+}
+
+#polygon6 {
+  background-color: #92b6eb;
+  opacity: 0.5;
+  width: 65vw;
+  height: 65vw;
+  min-height: 500px;
+  min-width: 500px;
+  max-width: 1000px;
+  max-height: 1000px;
+  bottom: -500px;
+  left: -500px;
+}
+
+@media screen and (max-width: 1000px) {
+  #polygon2 {
+    left: 100px;
+  }
+  #polygon6 {
+    left: -250px;
+    bottom: -400px;
+  }
+  #polygon1 {
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: black;
+  }
+  #polygon5 {
+    right: -200px;
+  }
+  #polygon1 {
+    right: -50px;
+  }
+  #polygon6 {
+    left: -300px;
+  }
+}
+
 /* NavBar */
+
 .nav-container {
   width: 95vw;
   margin: 0 2.5vw;
@@ -132,6 +266,11 @@ input::placeholder,
 
 .package-card .package-title {
   display: flex;
+  justify-content: space-between;
+}
+
+.package-card .package-title div {
+  display: flex;
   align-items: center;
 }
 
@@ -208,4 +347,32 @@ footer {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+/* Page not found 404 */
+.not-found-container {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.not-found-container span {
+  padding: 0;
+  margin: 0;
+  font-size: 10rem;
+}
+
+.not-found-container p {
+  font-size: 1.5rem;
+}
+
+.not-found-container .btn {
+  background-color: #e49797;
+}
+
+.not-found-container .btn:hover {
+  background-color: #d18484;
 }
