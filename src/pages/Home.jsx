@@ -9,12 +9,15 @@ import Modules from "../components/Modules";
 
 import { getModules } from "../services/modules";
 
-function Home() {
+function Home(props) {
   const [modules, setModules] = useState([]);
   const [moduleName, setModuleName] = useState("");
 
   useEffect(_ => {
-    getModules().then(data => setModules(data.packages));
+    getModules().then(data => {
+      setModules(data.packages)
+      props.getModules(data.packages)
+    });
   }, []);
 
   const handleInput = input => setModuleName(input);

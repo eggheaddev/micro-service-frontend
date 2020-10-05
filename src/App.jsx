@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // CSS
@@ -17,15 +17,25 @@ import NotFound from "./pages/NotFound";
 import Background from "./components/Background";
 
 function App() {
+  const [modules, setModules] = useState([]);
+  const getModules = modules => setModules(modules);
+
   return (
     <Router>
       <Background />
       <Switch>
-        <Route path="/" exact><Home/></Route>
+        <Route path="/" exact>
+          <Home getModules={getModules} />
+        </Route>
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/documentation" component={Documentation} />
-        <Route path="/package" component={Package} />
+        {modules.map(module => (
+          <Route
+            path={`/package/${module.name.replace(/\s/g, "-")}@${module.versions[module.versions.length - 1]}v`}
+            component={Package}
+          />
+        ))}
         <Route component={NotFound} />
       </Switch>
     </Router>

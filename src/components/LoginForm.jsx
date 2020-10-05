@@ -22,7 +22,7 @@ function LoginForm(props) {
     event.preventDefault();
     login(userInfo).then(res => {
       if (!res.error) {
-        props.onChange(document.cookie.split(document.cookie.match("x-access-token="))[1])
+        props.onChange(res["x-access-token"])
       } else {
         setErrorMsg(res.message);
       }
