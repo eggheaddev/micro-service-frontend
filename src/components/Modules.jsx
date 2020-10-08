@@ -4,6 +4,7 @@ import React from "react";
 import ModuleCard from "./ModuleCard";
 
 function Modules(props) {
+  // Filter modules name with the search input.
   const modules = props.modules.filter(module =>
     module.name.toLowerCase().match(props.search.toLowerCase())
   );
@@ -16,6 +17,8 @@ function Modules(props) {
         description={module.description}
         version={module.versions[module.versions.length - 1]}
         author={module.author}
+        created={module.created_at}
+        repository={module.repository}
       />
     ));
   }

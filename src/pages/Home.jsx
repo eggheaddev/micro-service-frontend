@@ -9,20 +9,22 @@ import Modules from "../components/Modules";
 
 import { getModules } from "../services/modules";
 
-function Home(props) {
+function Home() {
   const [modules, setModules] = useState([]);
   const [moduleName, setModuleName] = useState("");
 
+  // Get Modules from API
   useEffect(_ => {
     getModules().then(data => {
-      setModules(data.packages)
-      props.getModules(data.packages)
+      setModules(data.packages);
     });
   }, []);
 
+  // Handle the input info of Search Modules
   const handleInput = input => setModuleName(input);
 
-  function togleInfo() {
+  // Show the home description or show searching modules
+  function toggleInfo() {
     if (!moduleName) {
       return <AppDescription />;
     } else {
@@ -39,7 +41,7 @@ function Home(props) {
         <SearchModules onChange={handleInput} />
       </div>
 
-      <div className="description-packages-container">{togleInfo()}</div>
+      <div className="description-packages-container">{toggleInfo()}</div>
       <Footer />
     </Fragment>
   );

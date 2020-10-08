@@ -6,13 +6,12 @@ function getModules() {
 
 function getModule(module) {
     return fetch("/api/storage/package", {
-        method: "GET",
-        body: JSON.stringify(module),
+        method: "POST",
+        body: JSON.stringify({name: module }),
         headers: {
             'Content-Type': 'application/json'
         },
-    }).then(res => res.json())
-        .then(data => data.package)
+    }).then(data => data.json())
 }
 
-export  { getModules, getModule}
+export { getModules, getModule }
