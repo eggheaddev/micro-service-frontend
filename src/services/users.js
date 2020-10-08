@@ -1,5 +1,5 @@
 function register(userInfo) {
-    return fetch("/api/new_user", {
+    return fetch("https://api-hostify-service.herokuapp.com/api/new_user", {
         method: "POST",
         body: JSON.stringify(userInfo),
         headers: {
@@ -10,7 +10,7 @@ function register(userInfo) {
 }
 
 function login(userInfo) {
-    return fetch("/api/authorize", {
+    return fetch("https://api-hostify-service.herokuapp.com/api/authorize", {
         method: "POST",
         body: JSON.stringify(userInfo),
         credentials: "same-origin",

@@ -1,11 +1,11 @@
 function getModules() {
-    return fetch("/api/storage/packages")
+    return fetch("https://api-hostify-service.herokuapp.com/api/storage/packages")
         .then(res => res.json())
         .then(data => data)
 }
 
 function getModule(module) {
-    return fetch("/api/storage/package", {
+    return fetch("https://api-hostify-service.herokuapp.com/api/storage/package", {
         method: "POST",
         body: JSON.stringify({name: module }),
         headers: {
