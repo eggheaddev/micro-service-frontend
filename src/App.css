@@ -6,8 +6,10 @@ body {
   color: #303030;
 }
 
-h1,
-a {
+a, h1,
+a:link,
+a:hover {
+  text-decoration: none;
   color: #303030;
 }
 
@@ -369,7 +371,8 @@ input::placeholder,
 
 /* User Form */
 .form-container {
-  margin: 0 25vw;
+  width: 50vw;
+  margin: 0 auto;
   padding: 10vh 2.5vw;
 }
 
@@ -398,9 +401,24 @@ input::placeholder,
   align-items: center;
 }
 
+@media screen and (max-width: 750px) {
+  .form-container {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .form-container {
+    width: 99vw;
+  }
+  .user-form .text-center {
+    font-size: 1.5rem;
+  }
+}
+
 /* Token */
 .token-container {
-  margin: 20vh 20vw;
+  margin: 10vw 20vw;
   font-size: 1.5rem;
   display: flex;
   align-items: center;
@@ -410,16 +428,23 @@ input::placeholder,
 
 .token-container span {
   background-color: #f3f3f3;
+  opacity: 0.8;
   border: solid 1px #303030;
   padding: 10px 20px;
   word-break: break-all;
+}
+
+@media screen and (max-width: 500px) {
+  .token-container {
+    margin: 10vh 1vw;
+    font-size: 1.15;
+  }
 }
 
 /* Footer */
 .footer-container {
   background-color: #303030;
   color: #ffffff;
-  padding: 50px 0;
 }
 
 footer {
@@ -431,11 +456,24 @@ footer {
   font-size: 1.5rem;
 }
 
+footer div {
+  padding: 50px 10px;
+}
+
 .footer-container ul {
   font-size: 1.125rem;
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+@media screen and (max-width: 300px) {
+  footer {
+    justify-content: center;
+  }
+  footer div {
+    padding: 20px;
+  }
 }
 
 /* Page not found 404 */

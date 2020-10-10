@@ -32,11 +32,11 @@ function LoginForm(props) {
   return (
     <div className="user-form form-container mx-center">
       <p className="text-center">Get a token</p>
-      <sub className="mb-5">Tokens are available for one hour.</sub>
+      <sub className="mb-5">Tokens are available for 7 days.</sub>
       <form className="container mx-center" onSubmit={submitInfo}>
         <div className="form-group">
           <div className="form-info">
-            <span>Username or email</span>
+            <span>Username</span>
             {errorMsg && <sub className="ml-3">{errorMsg}</sub>}
           </div>
           <input
