@@ -10,8 +10,7 @@ function ModuleCard(props) {
       <div className="package-card">
         <div className="package-title">
           <div>
-            <h1 className="mr-3">{title}</h1>
-            <span>{version && `${version}v`}</span>
+            <h1>{title}</h1>
           </div>
           <p>{`@${author}`}</p>
         </div>
@@ -27,6 +26,8 @@ function ModuleCard(props) {
       return (
         <Fragment>
           <hr/>
+          <span>Last Version: {`${version}v`}</span>
+          <br/>
           <span>{created}</span>
           <br/>
           <a href={repository} target="_blank" rel="noopener noreferrer">Click to GitHub</a>

@@ -6,8 +6,10 @@ body {
   color: #303030;
 }
 
-h1,
-a {
+a, h1,
+a:link,
+a:hover {
+  text-decoration: none;
   color: #303030;
 }
 
@@ -33,6 +35,12 @@ input::placeholder,
   font-size: 1.125rem;
   color: #dbdbdb;
   font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    margin: 0;
+  }
 }
 
 /* Background */
@@ -169,15 +177,30 @@ input::placeholder,
 }
 
 /* NavBar */
-
 .nav-container {
-  width: 95vw;
-  margin: 0 2.5vw;
+  width: 90vw;
+  margin: auto;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 50px;
+}
+
+.nav-container ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: auto 0;
+  height: 50px;
+}
+
+.nav-container ul li {
+  margin: 0 10px;
 }
 
 .logo {
   font-size: 2.25rem;
+  margin: 0;
 }
 
 .nav-item {
@@ -192,9 +215,31 @@ input::placeholder,
   background-color: #41ab4b;
 }
 
+@media screen and (max-width: 500px) {
+  .nav-container .nav-container ul {
+    width: 100vw;
+    margin: 0;
+  }
+  .nav-item {
+    font-size: 1rem;
+  }
+  .sign-up-btn,
+  .sign-up-btn:hover {
+    font-size: 1rem;
+    padding: 2.5px;
+  }
+  .nav-container ul li {
+    margin: 0 1px;
+  }
+  .logo {
+    font-size: 1.25rem;
+  }
+}
+
 /* Home */
 .home-container {
-  margin: 10vh 25vw;
+  width: 50vw;
+  margin: 10vh auto;
 }
 
 .home-container > h1 {
@@ -233,6 +278,21 @@ input::placeholder,
   justify-content: center;
 }
 
+@media screen and (max-width: 800px) {
+  .home-container {
+    width: 60vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .home-container {
+    width: 90vw;
+  }
+  .home-container h1 {
+    font-size: 1.5rem;
+  }
+}
+
 /* Home Description */
 .description-packages-container {
   min-height: 65vh;
@@ -249,11 +309,33 @@ input::placeholder,
   font-size: 2.125rem;
 }
 
+@media screen and (max-width: 500px) {
+  .home-description span {
+    font-size: 1.25rem;
+  }
+  .home-description h3 {
+    font-size: 1.75rem;
+  }
+}
+
 /* Packages */
 .packages-container {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+}
+
+@media screen and (max-width: 1000px) {
+  .packages-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .packages-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Package Card */
@@ -262,6 +344,7 @@ input::placeholder,
   border-bottom: solid 10px #303030;
   color: #303030;
   padding: 5px 20px 40px;
+  height: 100%;
 }
 
 .package-link:hover {
@@ -273,18 +356,23 @@ input::placeholder,
   justify-content: space-between;
 }
 
-.package-card .package-title div {
-  display: flex;
-  align-items: center;
+.package-card h1 {
+  font-size: 1.5rem;
 }
 
-.package-card h1 {
-  font-size: 2rem;
+@media screen and (max-width: 500px) {
+  .package-card {
+    padding: 5px 3px 40px;
+  }
+  .package-card h1 {
+    font-size: 1.115rem;
+  }
 }
 
 /* User Form */
 .form-container {
-  margin: 0 25vw;
+  width: 50vw;
+  margin: 0 auto;
   padding: 10vh 2.5vw;
 }
 
@@ -313,9 +401,24 @@ input::placeholder,
   align-items: center;
 }
 
+@media screen and (max-width: 750px) {
+  .form-container {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .form-container {
+    width: 99vw;
+  }
+  .user-form .text-center {
+    font-size: 1.5rem;
+  }
+}
+
 /* Token */
 .token-container {
-  margin: 20vh 20vw;
+  margin: 10vw 20vw;
   font-size: 1.5rem;
   display: flex;
   align-items: center;
@@ -325,16 +428,23 @@ input::placeholder,
 
 .token-container span {
   background-color: #f3f3f3;
+  opacity: 0.8;
   border: solid 1px #303030;
   padding: 10px 20px;
   word-break: break-all;
+}
+
+@media screen and (max-width: 500px) {
+  .token-container {
+    margin: 10vh 1vw;
+    font-size: 1.15;
+  }
 }
 
 /* Footer */
 .footer-container {
   background-color: #303030;
   color: #ffffff;
-  padding: 50px 0;
 }
 
 footer {
@@ -346,11 +456,24 @@ footer {
   font-size: 1.5rem;
 }
 
+footer div {
+  padding: 50px 10px;
+}
+
 .footer-container ul {
   font-size: 1.125rem;
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+@media screen and (max-width: 300px) {
+  footer {
+    justify-content: center;
+  }
+  footer div {
+    padding: 20px;
+  }
 }
 
 /* Page not found 404 */
