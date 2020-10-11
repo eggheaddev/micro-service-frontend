@@ -24,7 +24,7 @@ function Modules(props) {
   }
 
   return (
-    <div className="packages-container container mb-5">{showModules()}</div>
+    <div className="packages-container mb-5">{showModules()}</div>
   );
 }
 

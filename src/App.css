@@ -216,7 +216,7 @@ input::placeholder,
   background-color: #41ab4b;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
   .nav-container {
     width: 98vw;
   }
@@ -277,12 +277,6 @@ input::placeholder,
 
 @media screen and (max-width: 800px) {
   .home-container {
-    width: 60vw;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .home-container {
     width: 90vw;
   }
   .home-container h1 {
@@ -293,6 +287,8 @@ input::placeholder,
 /* Home Description */
 .description-packages-container {
   min-height: 65vh;
+  width: 90vw;
+  margin: 0 auto;
 }
 
 .home-description {
@@ -306,7 +302,10 @@ input::placeholder,
   font-size: 2.125rem;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
+  .description-packages-container {
+    width: 95vw;
+  }
   .home-description span {
     font-size: 1.25rem;
   }
@@ -323,13 +322,13 @@ input::placeholder,
   grid-template-rows: 1fr;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .packages-container {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media screen and (max-width: 610px) {
+@media screen and (max-width: 800px) {
   .packages-container {
     grid-template-columns: 1fr;
   }
@@ -340,7 +339,7 @@ input::placeholder,
   background-color: #92b6eb;
   border-bottom: solid 10px #303030;
   color: #303030;
-  padding: 5px 20px 40px;
+  padding: 5px 20px;
   height: 100%;
 }
 
@@ -406,7 +405,7 @@ input::placeholder,
 
 @media screen and (max-width: 500px) {
   .package-card {
-    padding: 5px 3px 40px;
+    padding: 2.5px 10px;
   }
   .package-card h1 {
     font-size: 1.115rem;
