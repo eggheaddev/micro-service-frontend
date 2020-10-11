@@ -12,7 +12,7 @@ function ModuleCard(props) {
           <div>
             <h1>{title}</h1>
           </div>
-          <p>{`by @${author}`}</p>
+          <p>{`@${author}`}</p>
         </div>
         <span>{description}</span>
       </Fragment>
