@@ -40,7 +40,7 @@ input::placeholder,
 
 @media screen and (max-width: 600px) {
   .container {
-    margin: 0;
+    margin: 0 auto;
   }
 }
 
@@ -196,7 +196,7 @@ input::placeholder,
 }
 
 .nav-container ul li {
-  margin: 0 10px;
+  margin: 0 1vw;
 }
 
 .logo {
@@ -217,9 +217,8 @@ input::placeholder,
 }
 
 @media screen and (max-width: 500px) {
-  .nav-container .nav-container ul {
-    width: 100vw;
-    margin: 0;
+  .nav-container {
+    width: 98vw;
   }
   .nav-item {
     font-size: 1rem;
@@ -228,9 +227,6 @@ input::placeholder,
   .sign-up-btn:hover {
     font-size: 1rem;
     padding: 2.5px;
-  }
-  .nav-container ul li {
-    margin: 0 1px;
   }
   .logo {
     font-size: 1.25rem;
@@ -489,6 +485,22 @@ input::placeholder,
   }
 }
 
+/* Documentation */
+.documentation-container {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 500px) {
+  .documentation-container {
+    font-size: 1.5rem;
+  }
+}
+
 /* Footer */
 .footer-container {
   background-color: #303030;
@@ -550,4 +562,13 @@ footer div {
 
 .not-found-container .btn:hover {
   background-color: #d18484;
+}
+
+@media screen and (max-width: 600px) {
+  .not-found-container span {
+    font-size: 8rem;
+  }
+  .not-found-container p {
+    font-size: 1rem;
+  }
 }
