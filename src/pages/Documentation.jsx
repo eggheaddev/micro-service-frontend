@@ -6,7 +6,7 @@ function Documentation() {
   return (
     <Fragment>
       <NavBar />
-      <span>Not documentation yet</span>
+      <div className="documentation-container">Not documentation yet</div>
     </Fragment>
   );
 }

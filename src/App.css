@@ -6,7 +6,8 @@ body {
   color: #303030;
 }
 
-a, h1,
+a,
+h1,
 a:link,
 a:hover {
   text-decoration: none;
@@ -39,7 +40,7 @@ input::placeholder,
 
 @media screen and (max-width: 600px) {
   .container {
-    margin: 0;
+    margin: 0 auto;
   }
 }
 
@@ -195,7 +196,7 @@ input::placeholder,
 }
 
 .nav-container ul li {
-  margin: 0 10px;
+  margin: 0 1vw;
 }
 
 .logo {
@@ -216,9 +217,8 @@ input::placeholder,
 }
 
 @media screen and (max-width: 500px) {
-  .nav-container .nav-container ul {
-    width: 100vw;
-    margin: 0;
+  .nav-container {
+    width: 98vw;
   }
   .nav-item {
     font-size: 1rem;
@@ -227,9 +227,6 @@ input::placeholder,
   .sign-up-btn:hover {
     font-size: 1rem;
     padding: 2.5px;
-  }
-  .nav-container ul li {
-    margin: 0 1px;
   }
   .logo {
     font-size: 1.25rem;
@@ -347,7 +344,54 @@ input::placeholder,
   height: 100%;
 }
 
-.package-link:hover {
+@keyframes fontshow {
+  0% {
+    opacity: 0;
+    font-size: 0;
+  }
+  75% {
+    opacity: 0;
+    font-size: 1rem;
+  }
+  100% {
+    opacity: 1;
+    font-size: 1rem;
+  }
+}
+
+@keyframes fonthide {
+  0% {
+    opacity: 1;
+    font-size: 1rem;
+  }
+  15% {
+    opacity: 0;
+    font-size: 1rem;
+  }
+  100% {
+    opacity: 0;
+    font-size: 0;
+  }
+}
+
+#package-more-info {
+  opacity: 0;
+  font-size: 0;
+}
+
+#package-more-info.show{
+  animation: fontshow 0.5s;
+  opacity: 1;
+  font-size: 1rem;
+}
+
+#package-more-info.hide {
+  animation: fonthide 0.5s;
+  opacity: 0;
+  font-size: 0;
+}
+
+.package-card:hover {
   text-decoration: none;
 }
 
@@ -441,6 +485,22 @@ input::placeholder,
   }
 }
 
+/* Documentation */
+.documentation-container {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 500px) {
+  .documentation-container {
+    font-size: 1.5rem;
+  }
+}
+
 /* Footer */
 .footer-container {
   background-color: #303030;
@@ -502,4 +562,13 @@ footer div {
 
 .not-found-container .btn:hover {
   background-color: #d18484;
+}
+
+@media screen and (max-width: 600px) {
+  .not-found-container span {
+    font-size: 8rem;
+  }
+  .not-found-container p {
+    font-size: 1rem;
+  }
 }
