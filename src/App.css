@@ -6,7 +6,8 @@ body {
   color: #303030;
 }
 
-a, h1,
+a,
+h1,
 a:link,
 a:hover {
   text-decoration: none;
@@ -347,7 +348,54 @@ input::placeholder,
   height: 100%;
 }
 
-.package-link:hover {
+@keyframes fontshow {
+  0% {
+    opacity: 0;
+    font-size: 0;
+  }
+  75% {
+    opacity: 0;
+    font-size: 1rem;
+  }
+  100% {
+    opacity: 1;
+    font-size: 1rem;
+  }
+}
+
+@keyframes fonthide {
+  0% {
+    opacity: 1;
+    font-size: 1rem;
+  }
+  15% {
+    opacity: 0;
+    font-size: 1rem;
+  }
+  100% {
+    opacity: 0;
+    font-size: 0;
+  }
+}
+
+#package-more-info {
+  opacity: 0;
+  font-size: 0;
+}
+
+#package-more-info.show{
+  animation: fontshow 0.5s;
+  opacity: 1;
+  font-size: 1rem;
+}
+
+#package-more-info.hide {
+  animation: fonthide 0.5s;
+  opacity: 0;
+  font-size: 0;
+}
+
+.package-card:hover {
   text-decoration: none;
 }
 

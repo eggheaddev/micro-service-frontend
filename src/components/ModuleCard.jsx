@@ -3,11 +3,11 @@ import React, { useState, Fragment } from "react";
 function ModuleCard(props) {
   const { title, description, author, version, created, repository } = props;
 
-  const [completeInfo, setCompleteInfo] = useState(false);
+  const [completeInfo, setCompleteInfo] = useState(null);
 
   function moduleInformation() {
     return (
-      <div className="package-card">
+      <Fragment>
         <div className="package-title">
           <div>
             <h1>{title}</h1>
@@ -15,35 +15,36 @@ function ModuleCard(props) {
           <p>{`@${author}`}</p>
         </div>
         <span>{description}</span>
-        {moreInfo()}
-      </div>
+      </Fragment>
     );
   }
 
-  // Show the complete info card when mouse is hover
   function moreInfo() {
-    if (completeInfo) {
       return (
-        <Fragment>
-          <hr/>
+        <div id="package-more-info" className={completeInfo ? "show" : completeInfo === false && "hide"}>
+          <hr />
           <span>Last Version: {`${version}v`}</span>
-          <br/>
+          <br />
           <span>{created}</span>
-          <br/>
-          <a href={repository} target="_blank" rel="noopener noreferrer">Click to GitHub</a>
-        </Fragment>
+          <br />
+          <a href={repository} target="_blank" rel="noopener noreferrer">
+            Click to GitHub
+          </a>
+        </div>
       );
-    }
   }
 
   return (
-    <div
-      className="package-link"
-      onMouseEnter={_ => setCompleteInfo(true)}
-      onMouseLeave={_ => setCompleteInfo(false)}
-    >
-      {moduleInformation()}
-    </div>
+    <Fragment>
+      <div
+        className="package-card package-link"
+        onMouseEnter={_ => setCompleteInfo(true)}
+        onMouseLeave={_ => setCompleteInfo(false)}
+      >
+        {moduleInformation()}
+        {moreInfo()}
+      </div>
+    </Fragment>
   );
 }
 
